@@ -1,0 +1,123 @@
+/* Skills.css */
+
+.skills-section {
+    padding: 50px 0;
+    text-align: center; /* Center align the content */
+    position: relative; /* Ensure relative positioning for stacking context */
+    z-index: 1; /* Ensure the heading is above other elements */
+  }
+  
+  .skills-container {
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px; /* Increase the gap between cards */
+    position: relative; /* Ensure relative positioning for stacking context */
+    z-index: 0; /* Ensure cards are behind heading */
+  }
+  
+  h2 {
+    font-size: 2.5rem; /* Set font size to 2.5rem */
+    text-align: center; /* Center align the h2 */
+    margin-top: 0;
+    margin-bottom: 20px; /* Adjust as needed */
+    width: 100%;
+  }
+  
+  .card {
+    width: 300px; /* Increased width */
+    height: 300px; /* Decreased height */
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    margin: 20px; /* Add margin for spacing between cards */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1; /* Ensure cards are above the background */
+  }
+  
+  .card:hover ul li {
+    animation: none; /* Stop animation on card hover */
+  }
+  
+  .card ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 100%; /* Full height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds height */
+    display: flex;
+    flex-direction: column; /* Single column layout */
+    gap: 10px; /* Add gap between items */
+  }
+  
+  .card ul li {
+    line-height: 1.6;
+    color: var(--text-color);
+    animation: itemFall 5s linear infinite; /* Apply item falling animation */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hover effect transition */
+    padding: 5px; /* Add padding for hover effect */
+    border-radius: 4px; /* Rounded corners for hover effect */
+  }
+  
+  .card ul li:hover {
+    background-color: var(--primary-color); /* Change background color on hover */
+    color: var(--button-color); /* Change text color on hover */
+  }
+  
+  .card:nth-child(1) ul li { animation-delay: 0s; }
+  .card:nth-child(2) ul li { animation-delay: 1s; }
+  .card:nth-child(3) ul li { animation-delay: 2s; }
+  .card:nth-child(4) ul li { animation-delay: 3s; }
+  .card:nth-child(5) ul li { animation-delay: 4s; }
+  
+  @keyframes itemFall {
+    0% {
+      transform: translateY(-100px); /* Start above the card */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0); /* No animation translation */
+      opacity: 1;
+    }
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  [data-theme='light'] {
+    --card-background: #ffffff;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-color: #1abc9c; /* Teal */
+    --text-color: #333333;
+    --button-color: #ffffff;
+  }
+  
+  [data-theme='dark'] {
+    --card-background: #3d4859;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --primary-color: #e67e22; /* Orange */
+    --text-color: #ffffff;
+    --button-color: #ffffff;
+  }
+  
+  /* .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+   */
+  .skills-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

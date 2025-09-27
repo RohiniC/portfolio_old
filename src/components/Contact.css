@@ -1,0 +1,55 @@
+/* Contact.css */
+
+.contact-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--card-background); /* Use theme variable for card background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Use theme variable for text color */
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--primary-color); /* Use theme variable for icon color */
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--text-color); /* Use theme variable for text color */
+  }
+  
+  a {
+    color: var(--link-color); /* Use theme variable for link color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Ensure transition is applied */
+  }
+  
+  a:hover {
+    color: var(--link-hover-color); /* Use theme variable for link hover color */
+  }
+  

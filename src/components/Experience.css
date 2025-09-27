@@ -1,0 +1,208 @@
+/* src/components/Experience.css */
+
+:root {
+    --primary-color-light: #0d6efd; /* Blue */
+    --secondary-color-light: #6c757d; /* Grey */
+    --background-color-light: #f8f9fa; /* Light Grey */
+    --text-color-light: #212529; /* Dark Grey */
+    --card-background-light: #ffffff; /* White */
+    --card-border-light: #dee2e6; /* Light Grey Border */
+    --card-shadow-light: rgba(0, 0, 0, 0.1); /* Light Shadow */
+  
+    --primary-color-dark: #1e3a8a; /* Dark Blue */
+    --secondary-color-dark: #6b7280; /* Grey */
+    --background-color-dark: #111827; /* Dark Grey */
+    --text-color-dark: #e5e7eb; /* Light Grey */
+    --card-background-dark: #1f2937; /* Dark Grey */
+    --card-border-dark: #4b5563; /* Dark Grey Border */
+    --card-shadow-dark: rgba(0, 0, 0, 0.5); /* Dark Shadow */
+  
+    --climber-color-light: #e74c3c; /* Light Climber Color (Red) */
+    --climber-color-dark: #c0392b; /* Dark Climber Color (Dark Red) */
+  }
+  
+  [data-theme='light'] {
+    --primary-color: var(--primary-color-light);
+    --secondary-color: var(--secondary-color-light);
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --card-background: var(--card-background-light);
+    --card-border: var(--card-border-light);
+    --card-shadow: var(--card-shadow-light);
+    --climber-color: var(--climber-color-light);
+  }
+  
+  [data-theme='dark'] {
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --card-background: var(--card-background-dark);
+    --card-border: var(--card-border-dark);
+    --card-shadow: var(--card-shadow-dark);
+    --climber-color: var(--climber-color-dark);
+  }
+  
+  .experience-section {
+    padding: 60px 20px;
+    background: var(--background-color);
+    color: var(--text-color);
+    position: relative;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+    animation-delay: 0.1s;
+  }
+  
+  .timeline-item.right {
+    left: 50%;
+    text-align: left;
+    animation-delay: 0.2s;
+  }
+  
+  .timeline-content {
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 10px var(--card-shadow);
+    border: 2px solid var(--card-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .timeline-content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--card-shadow);
+  }
+  
+  .timeline-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--primary-color);
+  }
+  
+  .timeline-content h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: var(--secondary-color);
+  }
+  
+  .timeline-content span {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+  }
+  
+  .timeline-content p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: var(--text-color);
+  }
+  
+  .timeline-item.left .timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -20px; /* Adjust the arrow's position */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 20px; /* Increase arrow size */
+    border-color: transparent transparent transparent var(--primary-color); /* Make arrow more visible */
+  }
+  
+  .timeline-item.right .timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px; /* Adjust the arrow's position */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 20px 10px 0; /* Increase arrow size */
+    border-color: transparent var(--primary-color) transparent transparent; /* Make arrow more visible */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .climber {
+    position: absolute;
+    color: var(--climber-color);
+    font-size: 3em;
+    top: 100%;
+    left: 48%;
+    animation: climb 15s linear infinite, rotateLeftRight 1.5s infinite;
+  }
+  
+  @keyframes climb {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes rotateLeftRight {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+  }
+  

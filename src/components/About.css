@@ -1,0 +1,58 @@
+/* About.css */
+
+.about-section {
+  padding: 50px 0;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--card-background);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-content {
+  line-height: 1.6;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+}
+
+[data-theme='light'] {
+  --primary-color: #1abc9c; /* Teal */
+  --primary-color-dark: #16a085; /* Darker Teal */
+  --text-color: #333333;
+  --card-background: #ffffff;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --primary-color: #e67e22; /* Orange */
+  --primary-color-dark: #d35400; /* Darker Orange */
+  --text-color: #ffffff;
+  --card-background: #3d4859; /* New dark background color */
+  --box-shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Animation */
+/* .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+} */
+
+.about-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}

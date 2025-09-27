@@ -1,0 +1,79 @@
+/* Projects.css */
+
+.projects-section {
+    padding: 50px 0;
+    text-align: center; /* Center align the content */
+  }
+  
+  .projects-container {
+    width: 100%;
+    max-width: 1200px; /* Limit max-width for better readability */
+    margin: 0 auto; /* Center align on larger screens */
+    display: grid;
+    gap: 30px; /* Gap between grid items */
+  }
+  
+  h2 {
+    font-size: 2.5rem; /* Set font size to 2.5rem */
+    text-align: center; /* Center align the h2 */
+    margin-top: 0;
+    margin-bottom: 30px; /* Increased margin */
+  }
+  
+  .project-item {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+  
+  .project-item:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 16px var(--box-shadow-color); /* Increase shadow on hover */
+  }
+  
+  .project-item h3 {
+    font-size: 1.6rem; /* Adjusted font size for project titles */
+    margin-bottom: 10px; /* Increased margin */
+    color: var(--primary-color);
+    text-align: left; /* Align h3 to the left */
+  }
+  
+  .project-item .role,
+  .project-item .technologies,
+  .project-item .description {
+    font-size: 1rem; /* Adjusted font size for role, technologies, and description */
+    line-height: 1.6;
+    color: var(--text-color);
+    text-align: left; /* Align content to the left */
+    margin-bottom: 8px; /* Adjusted margin */
+  }
+  
+  [data-theme='light'] {
+    --card-background: #ffffff;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --primary-color: #1abc9c; /* Teal */
+    --text-color: #333333;
+  }
+  
+  [data-theme='dark'] {
+    --card-background: #3d4859;
+    --box-shadow-color: rgba(0, 0, 0, 0.2);
+    --primary-color: #e67e22; /* Orange */
+    --text-color: #ffffff;
+  }
+  
+  /* .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  } */
+  
+  .projects-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

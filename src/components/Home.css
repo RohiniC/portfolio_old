@@ -1,0 +1,127 @@
+/* src/pages/HomePage.css */
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .intro-section {
+    margin-bottom: 30px;
+    animation: slideInDown 1s ease-in-out;
+  }
+  
+  .intro-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+  }
+  
+  .intro-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .content-section {
+    max-width: 800px;
+    margin-bottom: 40px;
+    animation: slideInUp 1.5s ease-in-out;
+  }
+  
+  .content-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+  }
+  
+  .content-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+ 
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cta-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    color: var(--navbar-hover-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+  }
+
+  /* Light Theme 1 */
+:root[data-theme='light1'] .cta-button {
+    --button-background: #3498db; /* Blue */
+    --button-color: #ffffff; /* White */
+  }
+  
+  /* Light Theme 2 */
+  :root[data-theme='light2'] .cta-button {
+    --button-background: #e74c3c; /* Red */
+    --button-color: #ffffff; /* White */
+  }
+  
+  /* Dark Theme A */
+  :root[data-theme='darkA'] .cta-button {
+    --button-background: #2ecc71; /* Green */
+    --button-color: #ffffff; /* White */
+  }
+  
+  /* Dark Theme B */
+  :root[data-theme='darkB'] .cta-button {
+    --button-background: #9b59b6; /* Purple */
+    --button-color: #ffffff; /* White */
+  }
+  
+  .cta-button:hover {
+    background-color: var(--button-hover-background);
+    color: var(--button-hover-color); /* Optionally change text color on hover */
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInDown {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
